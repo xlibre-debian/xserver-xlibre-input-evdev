@@ -22,10 +22,10 @@
 
 # Initialize Autoconf
 AC_PREREQ([2.60])
-AC_INIT([xf86-input-evdev],
-        [2.11.0],
-        [https://gitlab.freedesktop.org/xorg/driver/xf86-input-evdev/issues],
-        [xf86-input-evdev])
+AC_INIT([xlibre-xf86-input-evdev],
+        [25.0.0],
+        [https://github.com/X11Libre/xf86-input-evdev/issues],
+        [xlibre-xf86-input-evdev])
 AC_CONFIG_SRCDIR([Makefile.am])
 AC_CONFIG_HEADERS([config.h])
 AC_CONFIG_AUX_DIR(.)
@@ -76,12 +76,5 @@ sdkdir=`$PKG_CONFIG --variable=sdkdir xorg-server`
 AC_ARG_WITH([sdkdir], [], [sdkdir="$withval"])
 AC_SUBST([sdkdir])
 
-DRIVER_NAME=evdev
-AC_SUBST([DRIVER_NAME])
-
-AC_CONFIG_FILES([Makefile
-                 src/Makefile
-                 man/Makefile
-                 include/Makefile
-                 xorg-evdev.pc])
+AC_CONFIG_FILES([Makefile src/Makefile man/Makefile include/Makefile])
 AC_OUTPUT
